@@ -1,0 +1,293 @@
+/* Основные стили body */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #dbeafe 0%, #f1f5f9 100%);
+}
+
+/* Навигационные панели */
+.top-nav-fixed, .top-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-nav-fixed {
+    background: transparent;
+    pointer-events: none;
+}
+
+.top-nav {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem 2.5rem 0 0;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    pointer-events: all;
+}
+
+.nav-link {
+    color: #3b4a6b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+}
+
+.top-nav .nav-link {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.nav-link:hover {
+    background: #f0f4fa;
+    transform: translateY(-2px);
+}
+
+.top-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+}
+
+/* Контейнеры и секции */
+.profile-container, .reference-content {
+    width: 100vw;
+    margin: 3rem 0 0 0;
+    padding: 0 0.5vw;
+    box-sizing: border-box;
+}
+
+.reference-section {
+    background: linear-gradient(120deg, #e0e7ff 0%, #f5f7fa 100%);
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reference-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Заголовки */
+.reference-header {
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+}
+
+.reference-header h1, .reference-section h3 {
+    color: #2d3651;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.reference-header h1 {
+    font-size: 2.3rem;
+}
+
+.reference-section h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 3px solid #e0e7ff;
+    letter-spacing: 0.5px;
+}
+
+.reference-header p {
+    color: #5a6a8a;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Карточки и сетки */
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.reference-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.4s cubic-bezier(.4,2,.3,1), transform 0.3s cubic-bezier(.4,2,.3,1);
+    box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.reference-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    opacity: 0.9;
+    border-radius: 16px 16px 0 0;
+}
+
+.reference-card:hover {
+    box-shadow: 0 8px 32px rgba(44,62,80,0.10);
+    transform: translateY(-4px);
+}
+
+.reference-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.reference-card h4 {
+    margin: 0 0 0.7rem;
+    color: #2d3651;
+    font-size: 1.18rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.reference-card p {
+    color: #5a6a8a;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 1.2rem;
+    line-height: 1.6;
+}
+
+/* Списки */
+.reference-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    width: 100%;
+}
+
+.reference-list li {
+    color: #555;
+    font-size: 1.08rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.reference-list li:hover {
+    color: #4b6cb7;
+    transform: translateX(7px);
+}
+
+.reference-list li:before {
+    content: "→";
+    color: #4b6cb7;
+    margin-right: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.reference-list li:hover:before {
+    transform: translateX(4px);
+}
+
+.reference-list li:last-child {
+    border-bottom: none;
+}
+
+/* Кнопки */
+.btn-reference {
+    display: inline-block;
+    background: #3b4a6b;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-reference:hover {
+    background: #22305a;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .profile-container, .nav-container {
+        padding: 0 0.5vw;
+    }
+    .reference-section {
+        padding: 2rem 0;
+    }
+    .reference-grid {
+        gap: 1.5rem;
+        padding: 1rem 1vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .reference-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 0.5rem 0.5vw;
+    }
+    .reference-card {
+        padding: 1.2rem 0.7rem;
+        border-radius: 18px;
+    }
+    .reference-section {
+        padding: 1rem 0;
+    }
+    .reference-header h1, .reference-section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+    .nav-container {
+        margin: 1rem 0.5rem 0 0;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .reference-grid {
+        gap: 1rem;
+    }
+    .reference-card {
+        padding: 1.2rem 0.5rem;
+    }
+}
